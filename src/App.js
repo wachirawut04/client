@@ -1,23 +1,25 @@
-import './App.css';
-import React, { useEffect, useState } from 'react';
-import FaangStocks from './Faang';
-
+import React from 'react';
+import AssetsTable from './components/AssetTable';
 
 function App() {
-  const [msg, setMsg] = useState('');
+  return (
+    <div style={{ padding: 20 }}>
+       <h1>Market Dashboard</h1>
 
-  useEffect(() => {
-    fetch('http://localhost:5000/api/hello')
-      .then(res => res.json())
-      .then(data => setMsg(data.message));
-  }, []);
+      <h2>Commodities</h2>
+      <AssetsTable assetClass="commodity" />
 
-  return( 
-    <div className='APP'>
-      <h1>{msg}</h1>
-      <FaangStocks/>
+      <h2>Stocks</h2>
+      <AssetsTable assetClass="stock" />
+
+      <h2>Forex</h2>
+      <AssetsTable assetClass="forex" />
+
+      <h2>Index</h2>
+      <AssetsTable assetClass="index" />
+
     </div>
-  )
+  );
 }
 
 export default App;
