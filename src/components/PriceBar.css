@@ -1,0 +1,36 @@
+.price-bar-vertical {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 20px;
+    font-family: 'Prompt', sans-serif;
+    font-size: 16px;
+    border: none;
+    width: 200px;
+
+    position: fixed;
+    top: 200px;
+    left: 56px;
+    box-sizing: border-box;
+}
+
+.price-bar-vertical a {
+    color: #f7f7f7;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+}
+
+.price-bar-vertical a:hover {
+    color: #007BFF;
+    background-color: #2e2e38;
+}
+
+
+.price-bar-vertical a.active {
+    background-color: #7f5283;
+    font-weight: 700;
+    color: white;
+}

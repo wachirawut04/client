@@ -1,0 +1,57 @@
+.table-container {
+    width: 913px;
+    overflow: auto;
+    margin: 120px auto 0;
+    background-color: #4a4853;
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06);
+    box-sizing: border-box;
+}
+
+.assets-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    text-align: left;
+    table-layout: fixed;
+    /* Keep columns even */
+    background-color: #4a4853;
+    /* Match container bg */
+}
+
+.assets-table thead {
+    background-color: #7f5283;
+    /* Muted purple header */
+    color: white;
+}
+
+.assets-table th,
+.assets-table td {
+    padding: 10px;
+    border-bottom: 1px solid #fefefe;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #f7f7f7;
+}
+
+.assets-table tbody tr:hover {
+    background-color: #c7dff8;
+    /* Slightly softer blue hover for better contrast */
+    cursor: pointer;
+    /* Optional: indicate row is interactable */
+}
+
+.status {
+    text-align: center;
+    font-size: 16px;
+    margin-top: 20px;
+    color: #3d3c42;
+    /* Dark charcoal, consistent with navbar bg */
+}
+
+.status.error {
+    color: #d9534f;
+    /* Bootstrap style red for errors */
+}

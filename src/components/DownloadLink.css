@@ -1,0 +1,15 @@
+.download-links {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.download-links a {
+    margin-left: 12px;
+    text-decoration: none;
+    color: #007bff;
+    font-weight: 500;
+}
+
+.download-links a:hover {
+    text-decoration: underline;
+}
