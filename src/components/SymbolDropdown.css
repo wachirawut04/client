@@ -1,0 +1,6 @@
+/* SymbolDropdown.css or global style */
+.symbol-dropdown {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}

@@ -42,6 +42,13 @@ export default function AssetsTable({ assetClass }) {
     return <p className="status">No assets found.</p>;
   }
 
+  // Function to format numbers
+  const formatNumber = (value) => {
+    if (typeof value !== 'number') return 'N/A';
+    const decimals = assetClass === 'index' ? 3 : 2;
+    return value.toFixed(decimals);
+  };
+
   return (
     <div className="table-container">
       <table className="assets-table">
@@ -74,13 +81,13 @@ export default function AssetsTable({ assetClass }) {
             return (
               <tr key={id || symbol}>
                 <td>{symbol ?? 'N/A'}</td>
-                <td>{open !== undefined ? open.toFixed(4) : 'N/A'}</td>
-                <td>{high !== undefined ? high.toFixed(4) : 'N/A'}</td>
-                <td>{low !== undefined ? low.toFixed(4) : 'N/A'}</td>
-                <td>{prev_close !== undefined ? prev_close.toFixed(4) : 'N/A'}</td>
+                <td>{formatNumber(open)}</td>
+                <td>{formatNumber(high)}</td>
+                <td>{formatNumber(low)}</td>
+                <td>{formatNumber(prev_close)}</td>
                 <td style={{ color }}>
                   {hasValues
-                    ? `${change > 0 ? '+' : ''}${change.toFixed(4)} (${change > 0 ? '+' : ''}${percentChange.toFixed(2)}%)`
+                    ? `${change > 0 ? '+' : ''}${formatNumber(change)} (${change > 0 ? '+' : ''}${percentChange.toFixed(2)}%)`
                     : 'N/A'}
                 </td>
               </tr>
